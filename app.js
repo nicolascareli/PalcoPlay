@@ -179,33 +179,15 @@ const btnFecharBusca =
 const blocoInstalarAppHome = document.getElementById("bloco-instalar-app-home");
 const btnInstalarAppHome = document.getElementById("btn-instalar-app-home");
 
+blocoInstalarAppHome.classList.remove("d-none");
+
 
 let eventoInstalacaoPWA = null;
 
-window.addEventListener("beforeinstallprompt", function(event) {
-    event.preventDefault();
-    eventoInstalacaoPWA = event;
-});
-
-btnInstalarAppHome.addEventListener("click", async function() {
-    if (eventoInstalacaoPWA) {
-        eventoInstalacaoPWA.prompt();
-
-        await eventoInstalacaoPWA.userChoice;
-
-        eventoInstalacaoPWA = null;
-        blocoInstalarAppHome.classList.add("d-none");
-        return;
-    }
-
-    alert("Para instalar: toque nos três pontinhos do navegador e escolha 'Instalar aplicativo' ou 'Adicionar à tela inicial'.");
-});
-
-window.addEventListener("appinstalled", function() {
-    eventoInstalacaoPWA = null;
-    blocoInstalarAppHome.classList.add("d-none");
-});
-
+console.log(
+    "Modo standalone:",
+    window.matchMedia("(display-mode: standalone)").matches
+);
 
 let modoBuscaGlobal = false;
 let playlistRetornoBuscaGlobalId = null;
@@ -2671,5 +2653,6 @@ btnInstalarAppHome.addEventListener("click", async function() {
 
 window.addEventListener("appinstalled", function() {
     eventoInstalacaoPWA = null;
-    blocoInstalarAppHome.classList.add("d-none");
+
+    console.log("PalcoPlay instalado");
 });
