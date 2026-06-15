@@ -413,7 +413,7 @@ body.modo-player #tela-player {
 /* ÁREA DA LETRA NO PLAYER */
 
 body.modo-player #area-letra-player {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 80px);
     padding: 0;
     align-items: center;
     justify-content: center;
