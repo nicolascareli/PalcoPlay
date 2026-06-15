@@ -184,24 +184,21 @@ let eventoInstalacaoPWA = null;
 
 window.addEventListener("beforeinstallprompt", function(event) {
     event.preventDefault();
-
     eventoInstalacaoPWA = event;
-
-    blocoInstalarAppHome.classList.remove("d-none");
 });
 
 btnInstalarAppHome.addEventListener("click", async function() {
-    if (!eventoInstalacaoPWA) {
-        alert("Para instalar, toque nos três pontinhos do navegador e escolha 'Instalar aplicativo' ou 'Adicionar à tela inicial'.");
+    if (eventoInstalacaoPWA) {
+        eventoInstalacaoPWA.prompt();
+
+        await eventoInstalacaoPWA.userChoice;
+
+        eventoInstalacaoPWA = null;
+        blocoInstalarAppHome.classList.add("d-none");
         return;
     }
 
-    eventoInstalacaoPWA.prompt();
-
-    const escolha = await eventoInstalacaoPWA.userChoice;
-
-    eventoInstalacaoPWA = null;
-    blocoInstalarAppHome.classList.add("d-none");
+    alert("Para instalar: toque nos três pontinhos do navegador e escolha 'Instalar aplicativo' ou 'Adicionar à tela inicial'.");
 });
 
 window.addEventListener("appinstalled", function() {
@@ -2654,23 +2651,22 @@ function tocarMusicaBuscaGlobal(musicaId, playlistId) {
 
 window.addEventListener("beforeinstallprompt", function(event) {
     event.preventDefault();
-
     eventoInstalacaoPWA = event;
-
-    blocoInstalarAppHome.classList.remove("d-none");
 });
 
 btnInstalarAppHome.addEventListener("click", async function() {
-    if (!eventoInstalacaoPWA) {
+    if (eventoInstalacaoPWA) {
+        eventoInstalacaoPWA.prompt();
+
+        await eventoInstalacaoPWA.userChoice;
+
+        eventoInstalacaoPWA = null;
         return;
     }
 
-    eventoInstalacaoPWA.prompt();
-
-    const escolha = await eventoInstalacaoPWA.userChoice;
-
-    eventoInstalacaoPWA = null;
-    blocoInstalarAppHome.classList.add("d-none");
+    alert(
+        "Para instalar o PalcoPlay: toque nos três pontinhos do navegador e escolha 'Instalar app' ou 'Adicionar à tela inicial'."
+    );
 });
 
 window.addEventListener("appinstalled", function() {
