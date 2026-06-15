@@ -179,7 +179,14 @@ const btnFecharBusca =
 const blocoInstalarAppHome = document.getElementById("bloco-instalar-app-home");
 const btnInstalarAppHome = document.getElementById("btn-instalar-app-home");
 
-blocoInstalarAppHome.classList.remove("d-none");
+if (
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true
+) {
+    blocoInstalarAppHome.classList.add("d-none");
+} else {
+    blocoInstalarAppHome.classList.remove("d-none");
+}
 
 
 let eventoInstalacaoPWA = null;
