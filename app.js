@@ -175,6 +175,14 @@ const btnFecharBusca =
     document.getElementById("btn-fechar-busca");
 
 
+
+const blocoInstalarAppHome = document.getElementById("bloco-instalar-app-home");
+const btnInstalarAppHome = document.getElementById("btn-instalar-app-home");
+
+
+let eventoInstalacaoPWA = null;
+
+
 let modoBuscaGlobal = false;
 let playlistRetornoBuscaGlobalId = null;
 
@@ -2615,3 +2623,30 @@ function tocarMusicaBuscaGlobal(musicaId, playlistId) {
 
     abrirMusica(musicaEncontrada);
 }
+
+
+window.addEventListener("beforeinstallprompt", function(event) {
+    event.preventDefault();
+
+    eventoInstalacaoPWA = event;
+
+    blocoInstalarAppHome.classList.remove("d-none");
+});
+
+btnInstalarAppHome.addEventListener("click", async function() {
+    if (!eventoInstalacaoPWA) {
+        return;
+    }
+
+    eventoInstalacaoPWA.prompt();
+
+    const escolha = await eventoInstalacaoPWA.userChoice;
+
+    eventoInstalacaoPWA = null;
+    blocoInstalarAppHome.classList.add("d-none");
+});
+
+window.addEventListener("appinstalled", function() {
+    eventoInstalacaoPWA = null;
+    blocoInstalarAppHome.classList.add("d-none");
+});

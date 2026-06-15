@@ -1120,3 +1120,30 @@ body.modo-player #app-header {
     border-color: #fff;
     box-shadow: none;
 }
+
+.bloco-instalar-app-home {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.btn-instalar-app-home {
+    width: 100%;
+    max-width: 520px;
+    height: 46px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #ff7a2f, #ff3d8f, #d100b9);
+    color: white;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgba(255, 61, 143, 0.35);
+}
+
+.bloco-instalar-app-home p {
+    margin-top: 10px;
+    color: #aaa;
+    font-size: 13px;
+}
