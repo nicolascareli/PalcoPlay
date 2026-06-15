@@ -1753,7 +1753,7 @@ async function renderizarPaginaPdf() {
     const contexto = canvas.getContext("2d");
 
     const areaLargura = areaLetraPlayer.clientWidth;
-    const areaAltura = areaLetraPlayer.clientHeight - 50;
+    const areaAltura = areaLetraPlayer.clientHeight;
 
     const viewportOriginal = pagina.getViewport({ scale: 1 });
 
