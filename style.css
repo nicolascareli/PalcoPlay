@@ -1163,3 +1163,11 @@ body.modo-player #canvas-pdf-player,
 body.modo-player .letra-imagem-player {
     pointer-events: none !important;
 }
+
+body.modo-player #area-letra-player {
+    outline: 4px solid yellow !important;
+}
+
+body.modo-player .player-bar {
+    outline: 4px solid cyan !important;
+}
