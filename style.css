@@ -1153,15 +1153,17 @@ body.modo-player .player-bar {
 }
 
 body.modo-player #area-letra-player {
-    position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    bottom: 150px !important;
+    bottom: 120px !important;
     height: auto !important;
-    padding: 0 !important;
+    padding-top: 20px !important;
     overflow: hidden !important;
     z-index: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 body.modo-player #canvas-pdf-player,
@@ -1175,4 +1177,8 @@ body.modo-player #area-letra-player {
 
 body.modo-player .player-bar {
     outline: 4px solid cyan !important;
+}
+
+body.modo-player #canvas-pdf-player {
+    margin: auto !important;
 }
