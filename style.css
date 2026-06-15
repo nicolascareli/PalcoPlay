@@ -1148,3 +1148,18 @@ body.modo-player #app-header {
     color: #aaa;
     font-size: 13px;
 }
+
+body.modo-player #area-letra-player {
+    height: calc(100vh - 92px) !important;
+    padding: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+}
+
+body.modo-player .letra-imagem-player,
+body.modo-player #canvas-pdf-player {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+}
