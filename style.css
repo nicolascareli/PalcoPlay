@@ -280,10 +280,6 @@ h2 {
 
 /* ÁREA DA LETRA */
 
-#area-letra-player {
-    border: 2px solid rgb(78, 78, 78) !important;
-}
-
 
 /* BARRA INFERIOR DO PLAYER */
 
@@ -1157,7 +1153,7 @@ body.modo-player #area-letra-player {
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    bottom: 105px !important;
+    bottom: 130px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
