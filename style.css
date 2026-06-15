@@ -1153,8 +1153,13 @@ body.modo-player .player-bar {
 }
 
 body.modo-player #area-letra-player {
-    height: calc(100vh - 110px) !important;
-    padding: 0 0 14px 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 115px !important;
+    height: auto !important;
+    padding: 0 !important;
     overflow: hidden !important;
     z-index: 1 !important;
 }
