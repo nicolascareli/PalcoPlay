@@ -1170,7 +1170,7 @@ body.modo-player .letra-imagem-player {
 }
 
 body.modo-player #area-letra-player {
-    outline: 4px solid yellow !important;
+    outline: 4px solid rgb(255, 0, 128) !important;
 }
 
 body.modo-player .player-bar {
