@@ -413,11 +413,20 @@ body.modo-player #tela-player {
 /* ÁREA DA LETRA NO PLAYER */
 
 body.modo-player #area-letra-player {
-    height: calc(100vh - 80px);
-    padding: 0;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    height: calc(100vh - 75px) !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+body.modo-player #canvas-pdf-player {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block !important;
+}
+
+body.modo-player .player-bar {
+    bottom: 0 !important;
+    z-index: 3000 !important;
 }
 
 
