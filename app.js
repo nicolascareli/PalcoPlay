@@ -1,5 +1,3 @@
-alert("Versão nova carregada");
-
 console.log("PalcoPlay iniciado");
 
 console.log(
