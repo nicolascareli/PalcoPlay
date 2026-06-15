@@ -1,5 +1,20 @@
 console.log("PalcoPlay iniciado");
 
+console.log(
+    "DISPLAY MODE:",
+    window.matchMedia("(display-mode: standalone)").matches
+);
+
+console.log(
+    "NAVIGATOR STANDALONE:",
+    window.navigator.standalone
+);
+
+console.log(
+    "REFERRER:",
+    document.referrer
+);
+
 // TELAS
 const telaPlaylists = document.getElementById("tela-playlists");
 const telaDetalhePlaylist = document.getElementById("tela-detalhe-playlist");
