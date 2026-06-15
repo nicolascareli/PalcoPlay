@@ -182,6 +182,33 @@ const btnInstalarAppHome = document.getElementById("btn-instalar-app-home");
 
 let eventoInstalacaoPWA = null;
 
+window.addEventListener("beforeinstallprompt", function(event) {
+    event.preventDefault();
+
+    eventoInstalacaoPWA = event;
+
+    blocoInstalarAppHome.classList.remove("d-none");
+});
+
+btnInstalarAppHome.addEventListener("click", async function() {
+    if (!eventoInstalacaoPWA) {
+        alert("Para instalar, toque nos três pontinhos do navegador e escolha 'Instalar aplicativo' ou 'Adicionar à tela inicial'.");
+        return;
+    }
+
+    eventoInstalacaoPWA.prompt();
+
+    const escolha = await eventoInstalacaoPWA.userChoice;
+
+    eventoInstalacaoPWA = null;
+    blocoInstalarAppHome.classList.add("d-none");
+});
+
+window.addEventListener("appinstalled", function() {
+    eventoInstalacaoPWA = null;
+    blocoInstalarAppHome.classList.add("d-none");
+});
+
 
 let modoBuscaGlobal = false;
 let playlistRetornoBuscaGlobalId = null;
