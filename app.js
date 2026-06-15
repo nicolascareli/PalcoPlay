@@ -179,15 +179,23 @@ const btnFecharBusca =
 const blocoInstalarAppHome = document.getElementById("bloco-instalar-app-home");
 const btnInstalarAppHome = document.getElementById("btn-instalar-app-home");
 
-if (
-    window.matchMedia("(display-mode: standalone)").matches ||
-    window.navigator.standalone === true
-) {
-    blocoInstalarAppHome.classList.add("d-none");
-} else {
-    blocoInstalarAppHome.classList.remove("d-none");
+function appEstaInstalado() {
+    return (
+        window.matchMedia("(display-mode: standalone)").matches ||
+        window.navigator.standalone === true ||
+        document.referrer.startsWith("android-app://")
+    );
 }
 
+function atualizarBotaoInstalarApp() {
+    if (appEstaInstalado()) {
+        blocoInstalarAppHome.classList.add("d-none");
+    } else {
+        blocoInstalarAppHome.classList.remove("d-none");
+    }
+}
+
+atualizarBotaoInstalarApp();
 
 let eventoInstalacaoPWA = null;
 
@@ -2660,6 +2668,5 @@ btnInstalarAppHome.addEventListener("click", async function() {
 
 window.addEventListener("appinstalled", function() {
     eventoInstalacaoPWA = null;
-
-    console.log("PalcoPlay instalado");
+    atualizarBotaoInstalarApp();
 });
